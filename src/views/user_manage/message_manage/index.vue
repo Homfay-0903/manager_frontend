@@ -49,7 +49,7 @@
 import breadCrumb from '../../../components/bread_crumb.vue'
 import { ref, reactive } from 'vue';
 
-import { getAdminList, searchUser, getAdminListLength, returnListData } from '../../../api/userinfo';
+import { searchUser, getAdminListLength, returnListData } from '../../../api/userinfo';
 
 import CreateAdmin from '../components/create_admin.vue'
 import editAdmin from '../components/edit_admin.vue'
