@@ -2,7 +2,7 @@
 
 这是一个基于 Vue 3 + Vite 的后台管理面板示例项目，项目包含常见的后台功能模块（登录、菜单、用户管理、消息、文件管理、产品管理、日志、设置等），并使用 Element Plus UI 组件库进行界面构建。
 
-## 项目体验地址为 ： homfay.asia
+## 项目体验地址为 ： https://homfay.asia
 建议使用的账号：999999，密码：test123 （此账号为超级管理员，可以体验该项目的全部功能）
 
 后端代码为：https://github.com/Homfay-0903/manager_backend
