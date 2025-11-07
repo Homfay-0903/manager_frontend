@@ -95,7 +95,7 @@
                                 <Message />
                             </el-icon>
                         </el-badge>
-                        <el-avatar :size="24" :src="userStore.imageUrl" />
+                        <el-avatar :size="24" :src="formatResourceUrl(userStore.imageUrl)" />
                         <el-dropdown>
                             <span class="el-dropdown-link">
                                 设置
@@ -129,6 +129,8 @@ import { reactive, ref, toRefs } from 'vue'
 import { useUserInfoStore } from '@/store/userinfoStore'
 import { useMsgStore } from '@/store/messageStore.js'
 import depMsg from '../../components/depMsg.vue'
+
+import { formatResourceUrl } from '@/utils/urlFormatter';
 
 const userStore = useUserInfoStore()
 const msgStore = useMsgStore()

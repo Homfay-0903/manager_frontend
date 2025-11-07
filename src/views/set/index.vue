@@ -10,7 +10,7 @@
                             <el-upload class="avatar-uploader" :action="avatarUrl"
                                 :show-file-list="false" :on-success="handleAvatarSuccess"
                                 :before-upload="beforeAvatarUpload">
-                                <img v-if="userStore.imageUrl" :src="userStore.imageUrl" class="avatar" />
+                                <img v-if="userStore.imageUrl" :src="formatResourceUrl(userStore.imageUrl)" class="avatar" />
                                 <el-icon v-else class="avatar-uploader-icon">
                                     <Plus />
                                 </el-icon>
@@ -122,7 +122,7 @@
                                 :show-file-list="false" :on-success="handleSwiperSuccess"
                                 :before-upload="beforeAvatarUpload" :data='item'>
                                 <template #trigger>
-                                    <img v-if="imageUrl[index]" :src="imageUrl[index]" class="swiper" />
+                                    <img v-if="imageUrl[index]" :src="formatResourceUrl(imageUrl[index])" class="swiper" />
                                     <img v-else src="@/assets/mark.png" alt="">
                                 </template>
                             </el-upload>
@@ -187,6 +187,8 @@ import {
 
 import { bus } from '../../utils/mitt'
 import Editor from './components/editor.vue';
+
+import { formatResourceUrl } from '@/utils/urlFormatter';
 
 const breadcrumb = ref()
 

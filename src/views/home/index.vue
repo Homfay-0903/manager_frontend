@@ -71,6 +71,8 @@ import Introduce from './components/introduce.vue'
 import CommonMsg from '../../components/common_msg.vue';
 import { bus } from "@/utils/mitt.js"
 
+import { formatResourceUrl } from '@/utils/urlFormatter';
+
 const companyData = ref()
 const systemData = ref()
 const getMessageList = async () => {
@@ -96,7 +98,8 @@ const item = ref({
 const imageUrl = ref([])
 const fetchAllSwiper = async () => {
     const res = await getAllSwiper()
-    imageUrl.value = res.data
+    //imageUrl.value = res.data
+    imageUrl.value = res.data.map(url => formatResourceUrl(url))
 }
 fetchAllSwiper()
 
