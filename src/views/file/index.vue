@@ -6,7 +6,7 @@
                 <div></div>
                 <div class="upload-wrapped">
                     <el-upload v-model:file-list="fileList" class="upload-demo"
-                        action="http://127.0.0.1:3007/file/uploadFile" multiple :limit='3' :on-exceed='handleExceed'
+                        :action="fileUrl" multiple :limit='3' :on-exceed='handleExceed'
                         :on-success="handleSuccess" :show-file-list='false'>
                         <el-button type="primary">上传文件</el-button>
                     </el-upload>
@@ -71,6 +71,8 @@ const breadcrumb = ref()
 const item = ref({
     first: '文件管理'
 })
+
+const fileUrl = ref(`${import.meta.env.VITE_API_BASEURL}/file/uploadFile`)
 
 const paginationData = reactive({
     // 文件总数

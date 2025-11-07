@@ -7,7 +7,7 @@
                     <div class="account-info-wrapped">
                         <span>用户头像：</span>
                         <div class="account-info-content">
-                            <el-upload class="avatar-uploader" action="http://127.0.0.1:3007/user/uploadAvatar"
+                            <el-upload class="avatar-uploader" :action="avatarUrl"
                                 :show-file-list="false" :on-success="handleAvatarSuccess"
                                 :before-upload="beforeAvatarUpload">
                                 <img v-if="userStore.imageUrl" :src="userStore.imageUrl" class="avatar" />
@@ -118,7 +118,7 @@
                         <!-- 轮播图 -->
                         <div class="swiper-wrapped" v-for="(item, index) in swiperData" :key="index">
                             <div class="swiper-name">轮播图{{ index + 1 }}:&nbsp;&nbsp;</div>
-                            <el-upload class="avatar-uploader" action="http://127.0.0.1:3007/set/uploadSwiper"
+                            <el-upload class="avatar-uploader" :action="swiperUrl"
                                 :show-file-list="false" :on-success="handleSwiperSuccess"
                                 :before-upload="beforeAvatarUpload" :data='item'>
                                 <template #trigger>
@@ -195,6 +195,9 @@ const item = ref({
 })
 
 const userStore = useUserInfoStore()
+
+const avatarUrl = ref(`${import.meta.env.VITE_API_BASEURL}/user/uploadAvatar`)
+const swiperUrl = ref(`${import.meta.env.VITE_API_BASEURL}/set/uploadSwiper`)
 
 const handleAvatarSuccess: UploadProps['onSuccess'] = (
     response
